@@ -1,0 +1,8 @@
+#!/bin/bash -e
+######## CUSTOMIZATION ENDS HERE ############
+
+echo "---> Copying source files to web server directory..."
+cp -Rf /tmp/src/. /var/www/html/
+
+
+

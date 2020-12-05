@@ -1,0 +1,12 @@
+#!/bin/bash -e
+######## CUSTOMIZATION ENDS HERE ############
+
+if [[ "$1" == "-h"]]; then
+exec /usr/libexec/s2i/usage
+fi
+
+echo "---> Copying source files to web server directory..."
+cp -Rf /tmp/src/. /var/www/html/
+
+
+
