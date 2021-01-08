@@ -19,9 +19,9 @@ RUN yum install -y mailx smtp mailutils && yum clean all
 #COPY  hello-java.jar /opt/app-root/bin/
 #COPY  run-app.sh /opt/app-root/bin/
 RUN useradd utenteprova -p Password1
-#RUN   chgrp -R 0 /opt/app-root && \
-#/var/spool && \
-#      chmod -R g=u /opt/app-root
+RUN   chgrp -R 0 /opt/app-root && 
+# /var/spool && \
+      chmod -R g=u /opt/app-root /var
 
 #EXPOSE 8080
 
