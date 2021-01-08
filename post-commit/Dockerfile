@@ -7,7 +7,8 @@ MAINTAINER   Red Hat Training <training@redhat.com>
 
 
 # Install the Java runtime, create a user for running the app, and set permissions
-RUN   yum install -y --disableplugin=subscription-manager mailx &&\
+RUN   yum install -y --disableplugin=subscription-manager mailx && \
+      yum install -y --disableplugin=subscription-manager mailutils && \
       yum clean all --disableplugin=subscription-manager -y && \
       mkdir -p /opt/app-root/bin
 
