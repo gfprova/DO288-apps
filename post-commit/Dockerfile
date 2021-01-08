@@ -24,4 +24,5 @@ EXPOSE 8080
 USER  1001
 
 # Run the fat JAR
-#CMD   /opt/app-root/bin/run-app.sh
+# CMD   /opt/app-root/bin/run-app.sh
+CMD bash -c "for i in {1..1000}; do echo \$i; sleep 10; done"
