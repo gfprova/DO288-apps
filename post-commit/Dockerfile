@@ -1,13 +1,13 @@
-FROM   registry.access.redhat.com/ubi7/ubi:7.0
+FROM   registry.access.redhat.com/ubi8/ubi:8.0
 
 MAINTAINER   Red Hat Training <training@redhat.com>
 
 # command line options to pass to the JVM
-ENV	  JAVA_OPTIONS -Xmx512m
+#ENV	  JAVA_OPTIONS -Xmx512m
 
 
 # Install the Java runtime, create a user for running the app, and set permissions
-RUN   yum install -y --disableplugin=subscription-manager mailutils &&\
+RUN   yum install -y --disableplugin=subscription-manager mailx &&\
       yum clean all --disableplugin=subscription-manager -y && \
       mkdir -p /opt/app-root/bin
 
