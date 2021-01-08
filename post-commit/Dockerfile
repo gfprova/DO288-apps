@@ -1,7 +1,7 @@
 #FROM   registry.access.redhat.com/ubi8/ubi:8.0
 FROM centos:7
 #ENV DEBIAN_FRONTEND="noninteractive"
-RUN yum install -y mailutils && yum clean all
+RUN yum install -y mailx smtp && yum clean all
 
 #MAINTAINER   Red Hat Training <training@redhat.com>
 
