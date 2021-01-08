@@ -1,7 +1,7 @@
 #FROM   registry.access.redhat.com/ubi8/ubi:8.0
 FROM centos:7
 #ENV DEBIAN_FRONTEND="noninteractive"
-RUN yum update && yum install -y mailutils && yum clean all
+RUN yum install -y mailutils && yum clean all
 
 #MAINTAINER   Red Hat Training <training@redhat.com>
 
@@ -18,14 +18,14 @@ RUN yum update && yum install -y mailutils && yum clean all
 #ADD   https://github.com/RedHatTraining/DO288-apps/releases/download/OCP-4.1-1/hello-java.jar /opt/app-root/bin/
 #COPY  hello-java.jar /opt/app-root/bin/
 #COPY  run-app.sh /opt/app-root/bin/
-#RUN useradd utenteprova -p Password1
+RUN useradd utenteprova -p Password1
 #RUN   chgrp -R 0 /opt/app-root && \
 #/var/spool && \
 #      chmod -R g=u /opt/app-root
 
 #EXPOSE 8080
 
-#USER  1001
+USER  1001
 
 # Run the fat JAR
 # CMD   /opt/app-root/bin/run-app.sh
