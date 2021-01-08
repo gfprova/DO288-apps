@@ -1,7 +1,7 @@
 #FROM   registry.access.redhat.com/ubi8/ubi:8.0
-FROM ubuntu:latest
-ENV DEBIAN_FRONTEND="noninteractive"
-RUN apt-get update && apt-get install -y mailutils
+FROM centos7:latest
+#ENV DEBIAN_FRONTEND="noninteractive"
+RUN yum update && yum install -y mailutils && yum clean all
 
 #MAINTAINER   Red Hat Training <training@redhat.com>
 
