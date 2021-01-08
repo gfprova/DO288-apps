@@ -15,7 +15,7 @@ RUN   yum install -y --disableplugin=subscription-manager mailx &&\
 #ADD   https://github.com/RedHatTraining/DO288-apps/releases/download/OCP-4.1-1/hello-java.jar /opt/app-root/bin/
 #COPY  hello-java.jar /opt/app-root/bin/
 #COPY  run-app.sh /opt/app-root/bin/
-
+RUN useradd utenteprova
 RUN   chgrp -R 0 /opt/app-root && \
       chmod -R g=u /opt/app-root
 
