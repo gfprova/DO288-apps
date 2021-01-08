@@ -8,7 +8,6 @@ MAINTAINER   Red Hat Training <training@redhat.com>
 
 # Install the Java runtime, create a user for running the app, and set permissions
 RUN   yum install -y --disableplugin=subscription-manager mailx && \
-      yum install -y --disableplugin=subscription-manager postfix && \
       yum clean all --disableplugin=subscription-manager -y && \
       mkdir -p /opt/app-root/bin
 
@@ -19,7 +18,7 @@ RUN   yum install -y --disableplugin=subscription-manager mailx && \
 RUN useradd utenteprova -p Password1
 RUN   chgrp -R 0 /opt/app-root && \
 #/var/spool && \
-      chmod -R g=u /opt/app-root /var/spool
+      chmod -R g=u /opt/app-root
 
 EXPOSE 8080
 
