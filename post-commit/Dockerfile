@@ -1,5 +1,5 @@
 #FROM   registry.access.redhat.com/ubi8/ubi:8.0
-FROM centos7:latest
+FROM centos:7
 #ENV DEBIAN_FRONTEND="noninteractive"
 RUN yum update && yum install -y mailutils && yum clean all
 
@@ -29,4 +29,4 @@ RUN yum update && yum install -y mailutils && yum clean all
 
 # Run the fat JAR
 # CMD   /opt/app-root/bin/run-app.sh
-#CMD bash -c "for i in {1..1000}; do echo \$i; sleep 10; done"
+CMD bash -c "for i in {1..1000}; do echo \$i; sleep 10; done"
