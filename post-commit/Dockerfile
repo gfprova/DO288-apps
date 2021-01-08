@@ -17,7 +17,8 @@ RUN   yum install -y --disableplugin=subscription-manager mailx && \
 #COPY  hello-java.jar /opt/app-root/bin/
 #COPY  run-app.sh /opt/app-root/bin/
 RUN useradd utenteprova -p Password1
-RUN   chgrp -R 0 /opt/app-root /var/spool && \
+RUN   chgrp -R 0 /opt/app-root && \
+#/var/spool && \
       chmod -R g=u /opt/app-root /var/spool
 
 EXPOSE 8080
