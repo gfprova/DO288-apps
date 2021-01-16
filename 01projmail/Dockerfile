@@ -4,3 +4,4 @@ RUN yum install -y sudo && \
 useradd -ms /bin/bash usermail && \
 echo "usermail ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/usermail && \
 chmod 0440 /etc/sudoers.d/usermail
+CMD ["su", "-", "user", "-c", "/bin/bash"]
