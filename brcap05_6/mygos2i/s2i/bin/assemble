@@ -1,0 +1,11 @@
+#!/bin/bash -e
+######## CUSTOMIZATION ENDS HERE ############
+echo "---> Installing application source..."
+cp -Rf /tmp/src/. /opt/app-root/
+
+echo "---> Building application from source..."
+go build app.go
+
+
+
+

@@ -1,0 +1,16 @@
+#!/bin/bash -e
+######## CUSTOMIZATION ENDS HERE ############
+
+#if [[ "$1" == "-h"]]; then
+#exec /usr/libexec/s2i/usage
+#fi
+
+echo "---> Installing application source..."
+cp -Rf /tmp/src/ /opt/app-root/
+cp -Rf /tmp/src/* /usr/libexec/bin/
+echo "---> Building application from source..."
+go build app.go
+
+
+
+
