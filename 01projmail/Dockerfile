@@ -4,4 +4,5 @@ RUN yum install -y sudo && \
 useradd -ms /bin/bash usermail && \
 echo "usermail ALL=(root) NOPASSWD:ALL" > /etc/sudoers.d/usermail && \
 chmod 0440 /etc/sudoers.d/usermail
-CMD ["su", "-", "user", "-c", "/bin/bash"]
+#CMD ["su", "-", "user", "-c", "/bin/bash"]
+CMD bash -c "for i in {1..100}; do echo \$i; sleep 10; done"
