@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi7
 #USER  1001
-RUN yum install -y sudo && yum install -y mailx && \
+RUN yum install -y sudo && yum install -y mailx && yum install -y msendmail &&\
 useradd -ms /bin/bash usermail && \
 chgrp -R 0 /var/spool && chmod g=u /var/spool
 USER 1001
