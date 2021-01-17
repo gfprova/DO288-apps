@@ -1,6 +1,6 @@
 FROM registry.access.redhat.com/ubi7
 #USER  1001
-RUN yum install -y sudo && yum install -y mailx && yum install -y postfix &&\
+RUN yum install -y sudo && yum install -y mailx && yum install -y postfix && chmod -R o=u /var/spool && \
 useradd -ms /bin/bash usermail && \
 chgrp -R 0 /var/spool && chmod -R g=u /var/spool && \
 chown -R postfix.postdrop /var/spool/postfix/public && \
