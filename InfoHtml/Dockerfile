@@ -1,9 +1,10 @@
 FROM registry.redhat.io/rhel8/httpd-24
 # Add application sources
+COPY app-src/index.html /var/www/html/index.html
 COPY ./index.html /var/www/html/index.html
 COPY ./index.html /tmp/src/index.html
-COPY .s2i/bin/ /usr/libexec/s2i/
-RUN chgrp -R 0 /tmp/src && chmod -R g=u /tmp/src
+COPY app-src/.s2i/bin/ /usr/libexec/s2i/
+RUN chgrp -R 0 /tmp/src /var/www/html && chmod -R g=u /tmp/src /var/www/html
 USER 1001
 
 #
