@@ -5,7 +5,7 @@ FROM registry.redhat.io/rhel8/httpd-24
 # The run script uses standard ways to run the application
 #CMD run-httpd
 
-ADD ./index.html /tmp/src/index.html
+COPY ./index.html /tmp/src/index.html
 RUN chgrp -R 0 /tmp/src /var/www/html && chmod -R g=u /tmp/src /var/www/html
 USER 1001
 
