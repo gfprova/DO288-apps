@@ -3,10 +3,10 @@ FROM registry.redhat.io/rhel8/httpd-24
 #COPY ./index.html /var/www/html/index.html
 
 # The run script uses standard ways to run the application
-#CMD run-httpd
-USER 0
+
+
 COPY ./index.html /tmp/src/index.html
-RUN chown -R 1001:0 /tmp/src
+RUN chgrp -R 0 /tmp/src && chmod -R g=u /tmp/src
 USER 1001
 
 #
@@ -14,4 +14,5 @@ USER 1001
 RUN /usr/libexec/s2i/assemble
 #
 ## The run script uses standard ways to run the application
-CMD /usr/libexec/s2i/run
+#CMD /usr/libexec/s2i/run
+CMD run-httpd
