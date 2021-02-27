@@ -4,15 +4,14 @@ FROM registry.redhat.io/rhel8/httpd-24
 
 # The run script uses standard ways to run the application
 
-
 COPY ./index.html /tmp/src/index.html
 RUN chgrp -R 0 /tmp/src && chmod -R g=u /tmp/src
 USER 1001
 
 #
 ## Let the assemble script install the dependencies
-RUN /usr/libexec/s2i/assemble
+#RUN /usr/libexec/s2i/assemble
 #
 ## The run script uses standard ways to run the application
 #CMD /usr/libexec/s2i/run
-CMD run-httpd
+#CMD run-httpd
